@@ -7,7 +7,7 @@ private $username = "root";
 private $password = "";
 private $database = "rehob";
 
-protected $connection;
+public $connection;
 
 public function __construct()
 {
