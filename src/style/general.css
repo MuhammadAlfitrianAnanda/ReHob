@@ -1,0 +1,98 @@
+/* general content */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* header and navbar */
+
+header {
+   background-color: #DC2F02;
+   color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.app-bar__menu {
+    display: none;
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+
+.nav-logo img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.nav-logo h1 {
+    font-family: "Fredoka One", sans-serif;
+    color: white;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+}
+
+nav li {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+nav li{
+    padding: 10px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+li a:hover {
+    background-color: #FAA307;
+    color: black;
+    border-radius: 10px;
+}
+
+/*Footer*/
+
+footer {
+    color: white;
+    background-color: #370617;
+    padding: 10px;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
