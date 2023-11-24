@@ -6,7 +6,7 @@
     <link rel="icon" href="./asset/logo-fix 1.png">
     <title>ReHob</title>
     <link rel="stylesheet" type="text/css" href="style/general.css">
-    <link rel="stylesheet" type="text/css" href="style/postIt.css">
+    <link rel="stylesheet" type="text/css" href="style/edit-profile.css">
     <link rel="stylesheet" type="text/css" href="style/responsive.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
@@ -36,25 +36,27 @@
     <main>
         <form class="postIt-card_item">
             <div class="content-card_item">
-                <h1 class="postIt-title_card"><strong>Post It</strong></h1>
+                <h1 class="postIt-title_card"><strong>Your Profile</strong></h1>
                 
-                <label for="storiesInput" class="visually-hidden">storiesInput</label>
-                <textarea id="storiesInput" class="postIt-story_card" name="storiesInput" rows="4" cols="50" placeholder="Share your stories here..."></textarea>
-                
-                <label for="hobbyTag" class="hobby-tag">Tag Your Hobby</label>
-                <select id="hobbyTag" class="postIt-tag_card" name="hobbyTag" placeholder="Tag Your Hobby">
-                    <option value="none">none</option>
-                    <option value="hobby1">hobby 1</option>
-                    <option value="hobby2">hobby 2</option>
-                    <option value="hobby3">hobby 3</option>
-                    <option value="hobby4">hobby 4</option>
-                </select>
+                <form>
+                    <label for="username" class="form-label">Username:</label>
+                    <input type="text" class="form-edit" id="username" placeholder="Username">
+                    
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-edit" id="email" placeholder="email@gmail.com">
 
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-edit" id="password" placeholder="xxxxx">
+
+                    <label for="password" class="form-label">Make sure your password:</label>
+                    <input type="password" class="form-edit" id="password" placeholder="xxxxx">
+                </form>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn-save">Save</button>
+                </div>
             </div>
 
-            <div class="modal-footer">
-                <button type="submit" class="btn-post">Post</button>
-            </div>
         </form>
         
     </main>
