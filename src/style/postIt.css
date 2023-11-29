@@ -25,6 +25,7 @@ main {
 }
 /*  */
 .postIt-title_card {
+    font-size: x-large;
     width: 100%;
     padding: 10px;
     border-radius: 10px;
@@ -55,7 +56,6 @@ main {
 }
 
 .hobby-tag {
-    font-weight: 500;
     margin-top: 15px;
     margin-bottom: 10px;
 }
