@@ -1,29 +1,21 @@
 <?php
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "db_deskripsi";
 
-$koneksi = new mysqli($server, $username, $password, $database);
+class Database
+{
+    private $host = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $database = "db_deskripsi";
 
-if ($koneksi->connect_error) {
-    die("Koneksi gagal: " . $koneksi->connect_error);
-}
+    public $connection;
 
-$query = "SELECT id_deskripsi, judul_deskripsi, text_deskripsi FROM detail";
-$result = $koneksi->query($query);
+    public function __construct()
+    {
+        $this->connection = mysqli_connect($this->host, $this->username, $this->password, $this->database);
 
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $id = $row["id_deskripsi"];
-        $judul = $row["judul_deskripsi"];
-        $deskripsi = $row["text_deskripsi"];
-
-        echo "ID: $id | Judul: $judul | Deskripsi: $deskripsi <br>";
+        if (!$this->connection) {
+            die("Database Connection Error: " . mysqli_connect_error());
+        }
     }
-} else {
-    echo "Error: " . $koneksi->error;
 }
-
-$koneksi->close();
 ?>

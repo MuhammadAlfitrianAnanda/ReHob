@@ -1,15 +1,16 @@
 <?php
 
-$host = "localhost";
-$user = "root";
+$server = "localhost";
+$username = "root";
 $password = "";
 $database = "db_deskripsi";
 
-$config = mysqli_connect ($host, $user, $password, $database);
+$config = mysqli_connect($server, $username, $password, $database);
 
-if(!$config){
-    die("gagal terhubung dengan databse: ".mysqli_connect_error());
+if (!$config) {
+    die("Koneksi gagal: " . mysqli_connect_error());
+} else {
+    echo "Terhubung dengan sukses!";
 }
 
-mysqli_close($config);
 ?>
