@@ -1,0 +1,74 @@
+/* postIt content */
+
+main {
+    background-color: #FEFAE0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+/*  */
+.postIt-card_item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    padding: 25px 50px;
+    margin: 25px;
+    box-shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+/*  */
+.content-card_item{
+    display: flex;
+    flex-direction: column;
+}
+/*  */
+.postIt-title_card {
+    font-size: x-large;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/*  */
+.postIt-story_card{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    padding: 10px;
+    background-color: #FFE86D;
+    border-radius: 10px;
+    /* font-size: small; */
+    border: none;
+    
+}
+
+.postIt-tag_card{
+    width: 100%;
+    padding: 10px;
+    background-color: #FFE86D;
+    border-radius: 10px;
+    /* font-size: small; */
+    border: none;
+}
+
+.hobby-tag {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.btn-post {
+    border-radius: 10px;
+    background: #CD0000;
+    padding: 7px 31px;
+    color: #fff;
+    border: none;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.modal-footer {
+    margin-top: 20px;
+}
