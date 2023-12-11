@@ -41,9 +41,11 @@
             <div class="register-form">
               <label for="username" class="form-label">Username</label>
               <input name="username" type="text" class="form-control" id="username" placeholder="Username">
-              
+              <div id="username-error" class="text-danger text-center mt-2"></div>
+
               <label for="email" class="form-label">Email</label>
               <input name="email" type="email" class="form-control" id="email" placeholder="email@gmail.com">
+              
 
               <label for="password" class="form-label">Password</label>
               <input name="password" type="password" class="form-control" id="password" placeholder="Password">
@@ -63,10 +65,42 @@
 
 
     <!-- Optional JavaScript; choose one of the two! -->
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <script>
+      $(document).ready(function(){
+          // Fungsi untuk memeriksa ketersediaan email saat mengisi formulir
+          $('#username').blur(function(){
+              var username = $(this).val();             
+     
+      
+              // Kirim permintaan Ajax untuk memeriksa username
+              $.ajax({
+                  url: '../session/check_username.php', // Gantilah dengan path yang sesuai
+                  type: 'POST',
+                  data: {username: username},
+                  success: function(response){
+                      if(response == 'available'){
+                          $('#username-error').html('<span class="text-success">Username tersedia.</span>');
+                      } else if(response == 'not_available'){
+                          $('#username-error').html('<span class="text-danger">Username sudah digunakan.</span>');
+                      }
+                  }
+              });
+          });
+      
+          // Validasi formulir sebelum pengiriman
+          $('form').submit(function(e){
+              var usernameStatus = $('#username-error span').text();
+      
+              // Cek apakah username tersedia
+              if(usernameStatus == 'Username sudah digunakan.'){
+                  e.preventDefault(); // Hentikan pengiriman formulir jika username tidak tersedia
+              }
+          });
+      });
+      </script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

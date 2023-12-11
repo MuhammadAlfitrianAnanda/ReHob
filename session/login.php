@@ -1,6 +1,6 @@
 <?php
 include('../connection/config.php');
-
+ 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST['password'];
@@ -17,13 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Cek apakah ada hasil dari query
         if (mysqli_num_rows($userQuery) > 0) {
             $userData = mysqli_fetch_array($userQuery);
-            session_start();
+           session_start();
+            $_SESSION['email'] = $userData['Email'];
 
-            $_SESSION['email'] = $userData['email'];
-
-            echo '<script>alert("Login berhasil! Selamat datang di REHOB!"); window.location.href = "../src/home.html";</script>';
+            echo '<script>alert("Login berhasil! Selamat datang di REHOB!"); window.location.href = "../src/home.php";</script>';
         } else {
-            echo "<script>alert('Email atau Password tidak valid. Silakan coba lagi.');</script>";
+            echo '<script>alert("Email atau Password tidak valid. Silakan coba lagi."); window.location.href = "../src/login.html"; </script>';
         }
     } else {
         echo "<script>alert('Error in query: " . mysqli_error($config) . "');</script>";

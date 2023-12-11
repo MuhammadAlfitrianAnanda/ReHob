@@ -14,26 +14,26 @@
 </head>
 <body>
 <?php include "../session/header.php"?>
-    <main>
-        <form class="postIt-card_item">
+   
+<main>
+        <div class="postIt-card_item">
             <div class="content-card_item">
                 <h1 class="postIt-title_card"><strong>Your Profile</strong></h1>
                 
-                <form>
+                <div>
                     <label for="username" class="form-label">Username:</label>
-                    <input type="text" name="username" class="form-edit" id="username" placeholder="Enter the name of the hobby here">
+                    <div class="form-edit" id="username"><?php echo $username; ?></div>
                     
                     <label for="email" class="form-label">Email:</label>
-                    <input type="email" name="email" class="form-edit" id="email" placeholder="Enter a description of the hobby here">
-                </form>
+                    <div class="form-edit" id="email"><?php echo $email; ?></div>
+                </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn-save" id="logout-btn">Log Out</button>
-                    <button type="submit" class="btn-save" id="save-btn">Save</button>
+                    <a href="../session/logout.php" class="btn-save" id="logout-btn">Log Out</a>
+                    <a href="edit-profile.php" class="btn-save" id="edit-btn">Edit Profile</a>
                 </div>
             </div>
-        </form>
-        
+        </div>
     </main>
     <?php include "../session/footer.php"?>
 </body>

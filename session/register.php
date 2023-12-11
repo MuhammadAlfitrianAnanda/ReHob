@@ -1,25 +1,30 @@
 <?php
-
 include('../connection/config.php');
 
-// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve the form data
     $username = $_POST["username"];
     $email = $_POST["email"];
     $password = $_POST["password"];
-
     $password = sha1($password);
 
- 
-    // Query untuk menyimpan data pengguna ke dalam tabel user
-    $sql = "INSERT INTO user (Username, Email, Password) VALUES ('$username', '$email', '$password');";
-    if ($config->query($sql) === TRUE) {
-        echo '<script>alert("Registrasi berhasil! Silakan login dengan akun baru Anda."); window.location.href = "../src/login.html";</script>';
-    } else {
-        echo "<script>alert('Registrasi gagal. Silakan coba lagi.');</script>";
-    }
-  
-}
+    // Pemeriksaan email
+    $checkQuery = "SELECT * FROM user WHERE Email = '$email'";
+    $result = $config->query($checkQuery);
 
+    if ($result->num_rows > 0) {
+        // Email sudah digunakan
+        echo '<script>alert("Email sudah digunakan. Silakan gunakan email lain."); window.location.href = "../src/register.html";</script>';
+    } else {
+        // Email tersedia, lanjutkan dengan menyimpan data
+        $insertQuery = "INSERT INTO user (Username, Email, Password) VALUES ('$username', '$email', '$password')";
+
+        if ($config->query($insertQuery) === TRUE) {
+            echo '<script>alert("Registrasi berhasil! Silakan login dengan akun baru Anda."); window.location.href = "../src/login.html";</script>';
+        } else {
+            echo '<script>alert("Registrasi gagal. Silakan coba lagi."); window.location.href = "../src/register.html";</script>';
+        }
+    }
+} else {
+    echo '<script>alert("Permintaan tidak valid."); window.location.href = "../src/register.html";</script>';
+}
 ?>
