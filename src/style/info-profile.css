@@ -47,6 +47,7 @@ main {
 
 #save-btn,
 #logout-btn {
+     text-decoration: none ;
     border-radius: 10px;
     background: #CD0000;
     padding: 7px 31px;
