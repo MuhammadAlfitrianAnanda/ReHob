@@ -1,7 +1,4 @@
 <?php
-// Inisialisasi sesi
-session_start();
-
 include('../connection/config.php');
 
 if (isset($_SESSION['email'])) {
