@@ -37,7 +37,7 @@ main {
     margin: 10px;
 }
 
-.card-hobby_item .hobby-title a {
+ a {
     text-decoration: none;
     color: black;
 }

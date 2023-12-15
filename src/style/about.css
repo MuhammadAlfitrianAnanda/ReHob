@@ -1,0 +1,108 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+} */
+
+
+main {
+    background-color: #FEFAE0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+    /* margin-top: 80px; */
+}
+
+.card-item {
+    position: relative;
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.25);
+    padding: 16px;
+    margin: 56px 24px;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-item:hover {
+    scale: 1.05;
+    animation-duration: 700ms;
+}
+
+.card-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-image img {
+    width: 100%;
+    transform: scale(1.2);
+}
+
+.name {
+    margin-top: 100px;
+    font-size: 1.4em;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+}
+
+p {
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-button {
+    margin: 12px 8px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.4s; 
+}
+
+.social-button:hover {
+    opacity: 0.8;
+}
+
+.social-button i {
+    color: #ffffff;
+    font-size: 1.4em;
+}
+
+.github {
+    background-color: black;
+}
+
+.linkedin {
+    background-color:rgb(6, 6, 100);
+}

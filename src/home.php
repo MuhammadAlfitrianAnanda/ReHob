@@ -30,11 +30,11 @@
                     $id_hobi = $row['ID_Hobi'];
                     
                     // Menampilkan card dengan data dari database
-                    echo ' <div class="card-hobby_item">';
+                    echo '<a href="detail.php?id='.$id_hobi.'"> <div class="card-hobby_item">';
                     echo '<img class="hobby-icon" src="../Asset/Icon/'. $icon .'" />';
-                    echo ' <h5 class="hobby-title"><bold><a href="detail.php?id='.$id_hobi.'">'. $title .'</a></bold></h5>';
+                    echo ' <h5 class="hobby-title"><bold>'. $title .'</bold></h5>';
                     echo ' <p class="hobby-rating"><strong>⭐️'. $rating.'</strong></p>';
-                    echo ' </div> ';        
+                    echo ' </div> </a>';        
                 }
             } else {
                 echo "No Hobbies found.";

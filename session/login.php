@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_num_rows($userQuery) > 0) {
             $userData = mysqli_fetch_array($userQuery);
            session_start();
-            $_SESSION['email'] = $userData['Email'];
+            $_SESSION['email'] = $email;
 
             echo '<script>alert("Login berhasil! Selamat datang di REHOB!"); window.location.href = "../src/home.php";</script>';
         } else {
