@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,6 +116,6 @@
     </main>
 
     <?php include "../session/footer.php"?>
-    
+
 </body>
 </html>
