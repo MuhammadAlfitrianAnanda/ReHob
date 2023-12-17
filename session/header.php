@@ -20,7 +20,7 @@ if (isset($_SESSION['email'])) {
     }
 } else {
     // Redirect ke halaman login jika tidak ada sesi login
-    header("Location:../src/login.html");
+    echo '<script>window.location.href = "../src/login.html";</script>';
     exit();
 }
 ?>

@@ -12,6 +12,11 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+   <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 <?php include "../session/header.php"?>
@@ -31,7 +36,7 @@
 
                 <div class="modal-footer">
                     <a href="../session/logout.php" class="btn-save" id="logout-btn">Log Out</a>
-                    <a href="edit-profile.php" class="btn-save" id="edit-btn">Edit Profile</a>
+                    <a href="edit-profile.php" class="btn-save" id="save-btn">Edit Profile</a>
                 </div>
             </div>
         </div>

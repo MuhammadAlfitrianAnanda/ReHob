@@ -12,6 +12,11 @@
     <link href='https://fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <?php include "../session/header.php"; ?>
@@ -35,7 +40,7 @@
                 <p id="passwordError" style="color: red;"></p>
 
                 <div class="modal-footer">
-                    <a href="info-profile.php" class="btn-save" id="logout-btn">Back</a>
+                    <a href="info-profile.php" class="back btn-save" id="logout-btn">Back</a>
                     <button type="button" class="btn-save" id="saveButton">Save</button>
                 </div>
             </div>

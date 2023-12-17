@@ -16,7 +16,7 @@
 <body>
 <?php include "../session/header.php"?>
     <main>
-        <form class="postIt-card_item">
+    <form class="postIt-card_item" action="../session/post.php" method="post">
             <div class="content-card_item">
                 <h1 class="postIt-title_card"><strong>Post It</strong></h1>
                 
@@ -26,14 +26,21 @@
                 <label for="hobbyTag" class="hobby-tag">Tag Your Hobby</label>
                 <select id="hobbyTag" class="postIt-tag_card" name="hobbyTag" placeholder="Tag Your Hobby">
                     <option value="none">none</option>
-                    <option value="hobby1">hobby 1</option>
-                    <option value="hobby2">hobby 2</option>
-                    <option value="hobby3">hobby 3</option>
-                    <option value="hobby4">hobby 4</option>
+                    <?php
+                      include('../connection/config.php');
+                        // Fetch data from the "hobi" table
+                        $sql = "SELECT * FROM hobi";
+                        $result = mysqli_query($config, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $tagar= $row['Tagar']; // Get the "id" column value
+                                echo '<option value="'.$tagar.'">'. $tagar.'</option>';
+                            }
+                        }
+                        ?>
                 </select>
 
             </div>
-
             <div class="modal-footer">
                 <button type="submit" class="btn-post">Post</button>
             </div>
