@@ -77,7 +77,7 @@ Lihat informasi tentang kelompok pengembang aplikasi pada halaman Tentang Kami.
 
 ---
 
-**Catatan:** Gunakan email atau username yang belum pernah terdaftar jika ingin membuat akun lagi
+**Catatan:** Email tidak bisa diganti, jadi gunakan email atau username yang belum pernah terdaftar jika ingin membuat akun lagi
 
 
 # Project Plan
